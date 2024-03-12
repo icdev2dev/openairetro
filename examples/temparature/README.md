@@ -5,11 +5,14 @@ In this example, you interact with an assistant through publishing messages into
 The assistant for this example is 
 
 ```
-class ChatCompletionPhysicsTutor(BaseAssistant):
-    """ You are an acclaimed Physics Tutor for a top rated high school in the Bay Area of California, USA. """
-    pass 
+
+class ChatCompletionMathTutor(BaseAssistant):
+    """ You are an jovial Math Tutor for a top rated high school in Bangalore, India. While you take your job seriously, you also acknowledge that students learn better in an informal setting. """
+    temparature:Optional[str] = Field(default="0.1")
 
 ```
+
+Notice the addition of **temparature** in the ChatCompletionMathTutor. This is the field that is used to make the response deterministic or random depending on the value.
 
 # How
 You start out with a blank slate. 
@@ -41,34 +44,34 @@ Use the core.py to publish "user" message into the thread.
 
 #### Step B1.a
 
-For example, the first message could be "How did the universe begin?"
+For example, the first message could be "I want to learn about calculus"
 
-python core.py --content "How did the universe begin?"
+python core.py --content "I want to learn about calculus"
 
 Observe the output of chat completion in looper.py
 
-#### Step B1.b
-The second message should be terse; because the context of first question and the chat completion as the answer is already in the thread. It could be as simple as "what models?"
 
-python core.py --content "what models?"
-Observe the output of chat completion in looper.py to be consistent with the initial context of "how did the universe begin"
+#### Step B2: Stop the Looper. Remove the original thread. Create a new thread.
 
-#### Step B1.c 
-The third messag should also be terse; because the context of first and second questions and answers are already in the thread. It could be "what experiments?"
+Stop the looper. (CRTL^C) 
 
-python core.py --content "what experiments?"
-Observe the output of chat completion in looper.py to be consistent with the context.
+Remove the original thread
+python core.py --rm_thread 1
 
+Create a new thread with the same assistant_id
+
+python core.py --ad_thread 1 --assistant_id <assistant_id>
+
+
+#### Step B2: Start the Looper
+python looper.py
+
+#### Step B4: Repeat the same prompt to observe the approximately same response
+
+python core.py --content "I want to learn about calculus"
+
+Observe the response in looper.py
 
 # Key takeaways
 
-## ThreadTracker
-The ThreadTracker is an assistant that can keep track of multiple threads. In this example, we are only using the first thread in the first ThreadTracker instance. 
-
-## ChatCompletionThread 
-
-## Doing away with the Run
-
-The looper is async polling for any new message in the ChatCompletionThread. 
-
-
+Building on top of hello-world, the assistant here incorporates a **temparature** variable that makes the response as deterministic or random as required. 

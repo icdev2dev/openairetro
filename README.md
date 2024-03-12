@@ -44,3 +44,13 @@ The examples directories provide a "learn by example" methodology for the betaas
 
 ## hello-world
 This is a simple example intending to show how the basic chat completion works in conjunction with the assistant api.
+
+
+
+
+
+# Pre-requisites
+
+You must, currently, git clone the betaassi repository from here ((https://github.com/icdev2dev/betaassi) at the same level as this repository. Then in the virtual environment for execuction of openairetro, you must pip install -e ../betaassi
+
+YOu must also export the OPENAI_API_KEY into your environment.
