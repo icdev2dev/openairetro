@@ -45,6 +45,9 @@ The examples directories provide a "learn by example" methodology for the betaas
 ## hello-world
 This is a simple example intending to show how the basic chat completion works in conjunction with the assistant api.
 
+## temparature 
+This example, which builds on top of the hello-world example, to include temparature as a actionable field on the Assistant structure. This means that you can set the temparature in such a manner to make the response as deterministic or random as required. 
+
 
 
 

@@ -62,13 +62,33 @@ Observe the output of chat completion in looper.py to be consistent with the con
 
 # Key takeaways
 
+## All data is self-contained within the relevant structures of Assistant API.
+No need for any additional database
+
 ## ThreadTracker
 The ThreadTracker is an assistant that can keep track of multiple threads. In this example, we are only using the first thread in the first ThreadTracker instance. 
 
 ## ChatCompletionThread 
+```
+class ChatCompletionThread(BaseThread):
+
+    assistant_id:Optional[str] = Field(default="")
+    hwm:Optional[str] = Field(default="")
+
+    chat_completion_model:Optional[str] = Field(default="gpt-3.5-turbo")
+
+```
+Apart from the usual thread attributes, the ChatCompletionThread incorporates the following attributes.
+
+**assistant_id** The assistant_id is used to identify the assistant to be used with this thread.
+
+**hwm** The high water mark (hwm) represents the last user_message that the thread has processed.
+
+**chat_completion_model** is self explanatory
 
 ## Doing away with the Run
 
-The looper is async polling for any new message in the ChatCompletionThread. 
+The looper is async polling for any new message in the ChatCompletionThread. In this example, there is no need for a separate run; because the thread has all the necessary information (in particular, the assistant) to enable Chat Completion.
+
 
 
