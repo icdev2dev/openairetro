@@ -48,7 +48,8 @@ This is a simple example intending to show how the basic chat completion works i
 ## temparature 
 This example, which builds on top of the hello-world example, to include temparature as a actionable field on the Assistant structure. This means that you can set the temparature in such a manner to make the response as deterministic or random as required. 
 
-
+## listablethreads
+This example has NOTHING to do with chat-completion. Instead it is a powerful demo of what can be accomplished through metadata. As of March 2024, there is no native programmatic way of listing threads that have been created. Here ,using metadata,  one can keep a track of threads that have been created (and removed from list when deleted)
 
 
 
