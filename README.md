@@ -51,6 +51,8 @@ This example, which builds on top of the hello-world example, to include tempara
 ## listablethreads
 This example has NOTHING to do with chat-completion. Instead it is a powerful demo of what can be accomplished through metadata. As of March 2024, there is no native programmatic way of listing threads that have been created. Here ,using metadata,  one can keep a track of threads that have been created (and removed from list when deleted)
 
+## dalle_gen_ids
+Inspired by a forum post (https://community.openai.com/t/how-do-i-replicate-browser-interface-dalle-3-gpt-behavior-using-the-api/682466), the op wanted to know how to generate an id for the image (and presumably retrieve the image from the ID). This example has NOTHING to do with Chat Completion; but demonstrates how to use threads and messages completely beyond it's original intent. This is possible through powerful use of metadata.
 
 
 # Pre-requisites
