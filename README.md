@@ -54,6 +54,10 @@ This example has NOTHING to do with chat-completion. Instead it is a powerful de
 ## dalle_gen_ids
 Inspired by a forum post (https://community.openai.com/t/how-do-i-replicate-browser-interface-dalle-3-gpt-behavior-using-the-api/682466), the op wanted to know how to generate an id for the image (and presumably retrieve the image from the ID). This example has NOTHING to do with Chat Completion; but demonstrates how to use threads and messages completely beyond it's original intent. This is possible through powerful use of metadata.
 
+## Summarizable (examples/intermediate/summarizable)
+This example provides an example of threads that can be summarized and the continuation of the conversation can occur within the context of the summary. In this manner the token count can be drastically reduced in certain cases; while maintaining an high level context of the conversation so far.
+
+
 
 # Pre-requisites
 
