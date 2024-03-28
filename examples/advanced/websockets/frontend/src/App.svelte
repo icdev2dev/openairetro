@@ -9,6 +9,7 @@ import AssistantsPage from "./lib/pages/Assistants.svelte";
 import ThreadsPage from "./lib/pages/Threads.svelte";
 import StreamPage from "./lib/pages/Stream.svelte";
 import MultipleProvidersPage from "./lib/pages/MultipleProviders.svelte";
+import ApplicationsPage from "./lib/pages/Applications.svelte";
 
 let tabs = [
     {name:'Home', route: '/', component: HomePage},
@@ -16,6 +17,7 @@ let tabs = [
     {name:'Threads', route: '/threads', component: ThreadsPage},
     {name:'Multiple Providers', route: '/multipleproviders', component: MultipleProvidersPage},
     {name:'Streaming', route: '/streaming/*', component: StreamPage},
+    {name:'Applications', route: '/applications/*', component: ApplicationsPage},
 
 ]
 
@@ -60,8 +62,8 @@ let tabs = [
   
     li {
       cursor: pointer;
-      margin-left: 100px;
-      margin-right: 100px;
+      margin-left: 30px;
+      margin-right: 30px;
   
     }
 
